@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "payment": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "free"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_desc": {
+      "type": "string"
+    },
+    "meta_keywords": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "download_link": {
+      "type": "string"
+    },
+    "ratings": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "product_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subcategory.subcategory",
+      "inversedBy": "products"
+    },
+    "childsubcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::childsubcategory.childsubcategory",
+      "inversedBy": "products"
+    },
+    "platforms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform.platform",
+      "mappedBy": "products"
+    }
+  }
+}
