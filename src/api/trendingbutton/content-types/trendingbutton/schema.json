@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trendingbuttons",
+  "info": {
+    "singularName": "trendingbutton",
+    "pluralName": "trendingbuttons",
+    "displayName": "trendingbutton",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "buttonname": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
